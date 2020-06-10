@@ -26,7 +26,7 @@ class EmojiMemoryGame: ObservableObject {
         let emojis = theme.emojiSets.shuffled()
         let randomNumber = Int.random(in: 2...theme.emojiSets.count)
         return MemoryGame<String>(numberOfPairsOfCards: randomNumber) { pairIndex in
-            emojis[pairIndex]
+            return emojis[pairIndex]
         }
     }
     
